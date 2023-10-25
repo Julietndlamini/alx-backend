@@ -7,11 +7,7 @@
 from collections import OrderedDict
 
 
-
 from base_caching import BaseCaching
-
-
-
 
 
 class LIFOCache(BaseCaching):
@@ -34,8 +30,6 @@ class LIFOCache(BaseCaching):
 
         self.cache_data = OrderedDict()
 
-
-
     def put(self, key, item):
 
         """Adds an item in the cache.
@@ -57,8 +51,6 @@ class LIFOCache(BaseCaching):
         self.cache_data[key] = item
 
         self.cache_data.move_to_end(key, last=True)
-
-
 
     def get(self, key):
 

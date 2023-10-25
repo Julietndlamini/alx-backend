@@ -7,11 +7,7 @@
 from collections import OrderedDict
 
 
-
 from base_caching import BaseCaching
-
-
-
 
 
 class LFUCache(BaseCaching):
@@ -35,8 +31,6 @@ class LFUCache(BaseCaching):
         self.cache_data = OrderedDict()
 
         self.keys_freq = []
-
-
 
     def __reorder_items(self, mru_key):
 
@@ -86,8 +80,6 @@ class LFUCache(BaseCaching):
 
         self.keys_freq.insert(ins_pos, [mru_key, mru_freq])
 
-
-
     def put(self, key, item):
 
         """Adds an item in the cache.
@@ -129,8 +121,6 @@ class LFUCache(BaseCaching):
             self.cache_data[key] = item
 
             self.__reorder_items(key)
-
-
 
     def get(self, key):
 

@@ -7,11 +7,7 @@
 from collections import OrderedDict
 
 
-
 from base_caching import BaseCaching
-
-
-
 
 
 class FIFOCache(BaseCaching):
@@ -34,8 +30,6 @@ class FIFOCache(BaseCaching):
 
         self.cache_data = OrderedDict()
 
-
-
     def put(self, key, item):
 
         """Adds an item in the cache.
@@ -53,8 +47,6 @@ class FIFOCache(BaseCaching):
             first_key, _ = self.cache_data.popitem(False)
 
             print("DISCARD:", first_key)
-
-
 
     def get(self, key):
 

@@ -9,9 +9,6 @@ from flask_babel import Babel
 from flask import Flask, render_template
 
 
-
-
-
 class Config:
 
     """Represents a Flask Babel configuration.
@@ -25,9 +22,6 @@ class Config:
     BABEL_DEFAULT_TIMEZONE = "UTC"
 
 
-
-
-
 app = Flask(__name__)
 
 app.config.from_object(Config)
@@ -37,11 +31,7 @@ app.url_map.strict_slashes = False
 babel = Babel(app)
 
 
-
-
-
 @app.route('/')
-
 def get_index() -> str:
 
     """The home/index page.
